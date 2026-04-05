@@ -104,23 +104,23 @@ export default function Home() {
           <div className="bg-gradient-to-br from-[hsl(120,8%,10%)] to-[hsl(120,8%,6%)] border border-[#00ff6a]/10 rounded-3xl p-10 sm:p-16 neon-box">
             <div className="space-y-6 text-white/70 text-lg leading-relaxed">
               <p>
-                Life is a competition. Your enemies—whether they&apos;re rivals, competitors, or just people who doubt you—may work smarter. They may work harder. They may have advantages you don&apos;t. But there&apos;s one thing they can&apos;t take from you: <strong className="text-[#00ff6a]">the ability to live better</strong>.
+                Life is a competition. Your enemies, whether they're rivals, competitors, or just people who doubt you, may work smarter. They may work harder. They may have advantages you don't. But there's one thing they can't take from you: <strong className="text-[#00ff6a]">the ability to live better</strong>.
               </p>
 
               <p>
-                <strong className="text-white">OutVape Your Enemies</strong> isn&apos;t about arrogance. It&apos;s about perspective. While they&apos;re grinding, stressing, and burning out, you&apos;re taking care of yourself. You&apos;re finding moments of peace. You&apos;re enjoying premium products that make life feel good. You&apos;re <strong className="text-[#00ff6a]">winning at life</strong>.
+                <strong className="text-white">OutVape Your Enemies</strong> isn't about arrogance. It's about perspective. While they're grinding, stressing, and burning out, you're taking care of yourself. Finding moments of peace. Enjoying premium products that make life feel good. You're <strong className="text-[#00ff6a]">winning at life</strong>.
               </p>
 
               <p>
-                The best revenge isn&apos;t success—it&apos;s <strong className="text-white">happiness</strong>. It&apos;s waking up and choosing to enjoy your day. It&apos;s surrounding yourself with quality. It&apos;s vaping better, living better, and refusing to let the noise of the world steal your peace.
+                The best revenge isn't success. It's <strong className="text-white">happiness</strong>. Waking up and choosing to enjoy your day. Surrounding yourself with quality. Vaping better, living better, and refusing to let the noise of the world steal your peace.
               </p>
 
               <p>
-                Every time you reach for an OutVape device, you&apos;re making a statement: <em className="text-[#00ff6a]">"I choose to live well. I choose to feel good. I choose to win at life."</em> That&apos;s what OutVape Your Enemies means. It&apos;s not about them. It&apos;s about <strong className="text-white">you</strong>.
+                Every time you reach for an OutVape device, you're making a statement. "I choose to live well. I choose to feel good. I choose to win at life." That's what OutVape Your Enemies means. It's not about them. It's about <strong className="text-white">you</strong>.
               </p>
 
               <p className="text-white/50 text-base pt-4 border-t border-white/10">
-                The consistent choice to vape better, live better, and refuse to compromise on quality—that&apos;s how you OutVape Your Enemies every single day.
+                The consistent choice to vape better, live better, and refuse to compromise on quality. That's how you OutVape Your Enemies every single day.
               </p>
             </div>
           </div>

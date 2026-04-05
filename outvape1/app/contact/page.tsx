@@ -214,21 +214,26 @@ export default function ContactPage() {
               </div>
 
               {/* Demo Notice */}
-              <div className="mt-6 bg-white/5 border border-white/10 rounded-xl p-4">
-                <p className="text-white/40 text-xs leading-relaxed">
-                  <strong className="text-white/60">Demo Site Notice:</strong> This contact form is for demonstration
-                  purposes. For real inquiries about OutVape or to discuss building a custom vape shop website,
-                  contact{" "}
-                  <a
-                    href="https://mattyjacks.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#00ff6a]/50 hover:text-[#00ff6a] transition-colors"
-                  >
-                    MattyJacks.com
-                  </a>
-                  .
-                </p>
+              <div className="mt-6 space-y-3">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <p className="text-white/40 text-xs leading-relaxed">
+                    <strong className="text-white/60">Contact Form Status:</strong> This contact form doesn&apos;t actually work yet. It&apos;s a demo interface. To reach us, email <a href="mailto:Matt@MattyJacks.com" className="text-[#00ff6a] hover:text-white transition-colors">Matt@MattyJacks.com</a> or call <a href="tel:603-999-9420" className="text-[#00ff6a] hover:text-white transition-colors">603-999-9420</a>.
+                  </p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <p className="text-white/40 text-xs leading-relaxed">
+                    <strong className="text-white/60">Demo Site Notice:</strong> This is a demonstration website. For real inquiries about OutVape or to discuss building a custom vape shop website, contact{" "}
+                    <a
+                      href="https://mattyjacks.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#00ff6a]/50 hover:text-[#00ff6a] transition-colors"
+                    >
+                      MattyJacks.com
+                    </a>
+                    .
+                  </p>
+                </div>
               </div>
             </div>
           </div>
