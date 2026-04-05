@@ -2,8 +2,17 @@
 
 import Link from "next/link";
 import { Wind } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Footer() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const year = mounted ? new Date().getFullYear() : 2025;
+
   return (
     <footer className="bg-black border-t border-[#00ff6a]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -67,7 +76,7 @@ export function Footer() {
 
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
-            &copy; {new Date().getFullYear()} OutVape Demo. This is a demonstration website built by{" "}
+            &copy; {year} OutVape Demo. This is a demonstration website built by{" "}
             <a href="https://mattyjacks.com" target="_blank" rel="noopener noreferrer" className="text-[#00ff6a]/50 hover:text-[#00ff6a] transition-colors">
               MattyJacks.com
             </a>

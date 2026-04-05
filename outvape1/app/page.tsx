@@ -13,7 +13,7 @@ import {
   Box,
   Battery,
 } from "lucide-react";
-import { FluidClouds } from "@/components/fluid-clouds";
+import { ThreeHero } from "@/components/three-hero";
 import { FeaturedProduct } from "@/components/featured-product";
 
 export default function Home() {
@@ -21,10 +21,8 @@ export default function Home() {
     <div className="grid-bg">
       {/* Hero Section */}
       <section className="relative hero-gradient overflow-hidden h-screen flex items-center">
-        {/* Fluid Cloud Animation Background */}
-        <div className="absolute inset-0 h-full">
-          <FluidClouds />
-        </div>
+        {/* Three.js Hero Background */}
+        <ThreeHero />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="text-center">
@@ -42,7 +40,7 @@ export default function Home() {
             <h1 className="animate-fade-in-up animate-delay-100 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] mb-6">
               <span className="text-white">OutVape</span>
               <br />
-              <span className="gradient-text">Your Enemies</span>
+              <span style={{ color: "#00ff00" }}>Your Enemies</span>
             </h1>
 
             <p className="animate-fade-in-up animate-delay-200 text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">

@@ -34,45 +34,78 @@ export function FluidClouds() {
 
     const particles: Particle[] = [];
     let time = 0;
+    let mouseX = canvas.offsetWidth / 2;
+    let mouseY = canvas.offsetHeight / 2;
 
-    const createCloudParticles = (fromLeft: boolean) => {
-      const startX = fromLeft ? -20 : canvas.offsetWidth + 20;
-      const startY = canvas.offsetHeight * 0.6 + Math.random() * 100;
-      const count = 8 + Math.floor(Math.random() * 6);
+    // Track mouse position
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
+
+    // Track touch position
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.touches[0].clientX - rect.left;
+        mouseY = e.touches[0].clientY - rect.top;
+      }
+    };
+
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("touchmove", handleTouchMove);
+
+    const createCloudParticles = (x: number, y: number) => {
+      const count = 12 + Math.floor(Math.random() * 10);
 
       for (let i = 0; i < count; i++) {
-        const angle = (Math.PI / 4) * (0.5 + Math.random());
-        const speed = 0.5 + Math.random() * 1.5;
-        const vx = fromLeft ? Math.cos(angle) * speed : -Math.cos(angle) * speed;
-        const vy = -Math.sin(angle) * speed - Math.random() * 0.5;
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 0.3 + Math.random() * 1.2;
+        const vx = Math.cos(angle) * speed;
+        const vy = Math.sin(angle) * speed;
 
         particles.push({
-          x: startX + (Math.random() - 0.5) * 40,
-          y: startY + (Math.random() - 0.5) * 40,
-          vx: vx + (Math.random() - 0.5) * 0.3,
-          vy: vy + (Math.random() - 0.5) * 0.3,
+          x: x + (Math.random() - 0.5) * 80,
+          y: y + (Math.random() - 0.5) * 80,
+          vx: vx + (Math.random() - 0.5) * 0.2,
+          vy: vy + (Math.random() - 0.5) * 0.2,
           life: 0,
-          maxLife: 180 + Math.random() * 120,
-          size: 30 + Math.random() * 60,
+          maxLife: 300 + Math.random() * 200,
+          size: 100 + Math.random() * 160,
         });
       }
     };
 
+    // Create random spawn points around hero section
+    const createRandomCloudBurst = () => {
+      const randomX = Math.random() * canvas.offsetWidth;
+      const randomY = Math.random() * canvas.offsetHeight * 0.7;
+      createCloudParticles(randomX, randomY);
+    };
+
     let lastCloudTime = 0;
-    const cloudInterval = 1500;
+    let lastRandomTime = 0;
+    const cloudInterval = 50;
+    const randomInterval = 800;
 
     const animate = () => {
       time++;
 
-      // Create clouds alternating left/right
+      // Create clouds at mouse/touch position
       if (time - lastCloudTime > cloudInterval) {
-        const fromLeft = Math.floor(time / cloudInterval) % 2 === 0;
-        createCloudParticles(fromLeft);
+        createCloudParticles(mouseX, mouseY);
         lastCloudTime = time;
       }
 
+      // Create random cloud bursts around hero
+      if (time - lastRandomTime > randomInterval) {
+        createRandomCloudBurst();
+        lastRandomTime = time;
+      }
+
       // Clear canvas with semi-transparent background for motion blur
-      ctx.fillStyle = "rgba(11, 20, 11, 0.15)";
+      ctx.fillStyle = "rgba(11, 20, 11, 0.05)";
       ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
       // Update and draw particles
@@ -129,6 +162,8 @@ export function FluidClouds() {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      canvas.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
