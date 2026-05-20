@@ -13,16 +13,24 @@ import {
   Box,
   Battery,
 } from "lucide-react";
-import { ThreeHero } from "@/components/three-hero";
+import Image from "next/image";
 import { FeaturedProduct } from "@/components/featured-product";
 
 export default function Home() {
   return (
     <div className="grid-bg">
       {/* Hero Section */}
-      <section className="relative hero-gradient overflow-hidden h-screen flex items-center">
-        {/* Three.js Hero Background */}
-        <ThreeHero />
+      <section className="relative overflow-hidden h-screen flex items-center">
+        {/* Photo Background */}
+        <Image
+          src="/images/outvape image 1 outside of shop.jpg"
+          alt="OutVape shop exterior"
+          fill
+          priority
+          className="object-cover object-center"
+          style={{ zIndex: 0 }}
+        />
+        <div className="absolute inset-0 bg-black/60" style={{ zIndex: 1 }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="text-center">
@@ -207,6 +215,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Shop Gallery Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-[#00ff6a]/10 border border-[#00ff6a]/20 rounded-full px-4 py-1.5 mb-4">
+              <MapPin className="w-3.5 h-3.5 text-[#00ff6a]" />
+              <span className="text-[#00ff6a] text-xs font-semibold tracking-wide uppercase">Inside the Shop</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              Come See Us in <span className="text-[#00ff6a]">Salem, NH</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto">
+              A modern, welcoming shop stocked with the latest devices, juices, and accessories.
+            </p>
+          </div>
+
+          {/* Large feature image */}
+          <div className="relative rounded-3xl overflow-hidden mb-4 h-[480px]">
+            <Image
+              src="/images/outvape image 2 inside the shop.jpg"
+              alt="Inside OutVape shop"
+              fill
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          </div>
+
+          {/* 3-image grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="relative rounded-2xl overflow-hidden h-64">
+              <Image
+                src="/images/outvape image 3 inside the shop glass gallery.jpg"
+                alt="Glass gallery display"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/20 hover:bg-black/0 transition-colors" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden h-64">
+              <Image
+                src="/images/outvape image 4 inside the shop glass gallery closeup.jpg"
+                alt="Glass gallery closeup"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/20 hover:bg-black/0 transition-colors" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden h-64">
+              <Image
+                src="/images/outvape image 5 inside the shop vape juice.jpg"
+                alt="Vape juice selection"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/20 hover:bg-black/0 transition-colors" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA / MattyJacks Banner */}
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -274,32 +342,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Decorative card */}
-            <div className="relative">
-              <div className="bg-[hsl(120,8%,8%)] border border-[#00ff6a]/10 rounded-3xl p-8 neon-box">
-                <div className="flex items-center gap-3 mb-6">
-                  <Wind className="w-8 h-8 text-[#00ff6a]" />
-                  <span className="text-2xl font-black">
-                    <span className="text-white">OUT</span>
-                    <span className="text-[#00ff6a]">VAPE</span>
-                  </span>
-                </div>
-                <div className="space-y-3 text-white/50 text-sm">
-                  <p>&#10003; Premium Disposable Vapes</p>
-                  <p>&#10003; Refillable Pod Systems</p>
-                  <p>&#10003; 100+ E-Liquid Flavors</p>
-                  <p>&#10003; Carrying Cases & Accessories</p>
-                  <p>&#10003; Coils, Pods & Replacement Parts</p>
-                  <p>&#10003; Starter Kits & Bundles</p>
-                </div>
-                <div className="mt-6 pt-6 border-t border-white/5">
-                  <p className="text-[#00ff6a]/60 text-xs font-medium">
-                    This is a demo site built by MattyJacks.com
-                  </p>
-                </div>
+            {/* Shop photo */}
+            <div className="relative rounded-3xl overflow-hidden h-[420px]">
+              <Image
+                src="/images/outvape image 6 inside the shop customer woman.jpg"
+                alt="Customer in OutVape shop"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-[#00ff6a] text-xs font-semibold tracking-wide uppercase mb-1">Salem, NH</p>
+                <p className="text-white font-bold text-lg">Friendly staff, expert advice.</p>
               </div>
-              {/* Glow behind card */}
-              <div className="absolute -inset-4 bg-[#00ff6a]/5 rounded-3xl blur-2xl -z-10" />
             </div>
           </div>
         </div>
