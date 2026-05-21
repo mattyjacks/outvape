@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ShoppingCart, Wind } from "lucide-react";
+import { ThemePicker } from "./theme-picker";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -118,6 +119,7 @@ export function Navbar() {
           </div>
         )}
       </nav>
+      <ThemePicker />
     </>
   );
 }

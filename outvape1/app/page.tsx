@@ -12,6 +12,7 @@ import {
   Droplets,
   Box,
   Battery,
+  FlaskConical,
 } from "lucide-react";
 import Image from "next/image";
 import { FeaturedProduct } from "@/components/featured-product";
@@ -211,6 +212,91 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Chemically Labeled Vape Juice Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-[#00ff6a]/10 border border-[#00ff6a]/20 rounded-full px-4 py-1.5 mb-6">
+                <FlaskConical className="w-3.5 h-3.5 text-[#00ff6a]" />
+                <span className="text-[#00ff6a] text-xs font-semibold tracking-wide uppercase">
+                  Full Transparency
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">
+                Chemically <span className="text-[#00ff6a]">Labeled</span> Vape Juice
+              </h2>
+              <div className="space-y-4 text-white/70 text-lg leading-relaxed">
+                <p>
+                  It's vape juice that has its ingredients and flavor molecules listed out - in what milligram or microgram per milliliter and per bottle.
+                </p>
+                <p>
+                  <strong className="text-white">Why it matters:</strong> With other vape juices, you can't tell what's in it. With our chemically labeled vape juice, <strong className="text-[#00ff6a]">you can do your own research</strong> on the specific chemicals in research papers and available online.
+                </p>
+                <p>
+                  We aim to only include the chemicals that don't have bad health effects. Full transparency means you know exactly what you're vaping.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/store"
+                  className="group flex items-center justify-center gap-2 bg-[#00ff6a] text-black font-bold px-6 py-3 rounded-xl hover:shadow-[0_0_30px_rgba(0,255,106,0.4)] transition-all"
+                >
+                  Browse E-Liquids
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Chemical composition visualization */}
+            <div className="bg-gradient-to-br from-[hsl(120,8%,10%)] to-[hsl(120,8%,6%)] border border-[#00ff6a]/20 rounded-3xl p-8 neon-box">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-[#00ff6a]/10 rounded-xl flex items-center justify-center">
+                  <FlaskConical className="w-6 h-6 text-[#00ff6a]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Example Label</h3>
+                  <p className="text-white/40 text-sm">Strawberry Mint 60ml</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-white/60 text-sm">Propylene Glycol (PG)</span>
+                  <span className="text-[#00ff6a] font-mono text-sm">500 mg/ml</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-white/60 text-sm">Vegetable Glycerin (VG)</span>
+                  <span className="text-[#00ff6a] font-mono text-sm">450 mg/ml</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-white/60 text-sm">Nicotine</span>
+                  <span className="text-[#00ff6a] font-mono text-sm">6 mg/ml</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-white/60 text-sm">Ethyl Maltol</span>
+                  <span className="text-[#00ff6a] font-mono text-sm">50 μg/ml</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-white/60 text-sm">Menthyl Lactate</span>
+                  <span className="text-[#00ff6a] font-mono text-sm">25 μg/ml</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-white/60 text-sm">Furaneol (Strawberry)</span>
+                  <span className="text-[#00ff6a] font-mono text-sm">12 μg/ml</span>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-[#00ff6a]/20">
+                <p className="text-white/40 text-xs">
+                  Total: 30,000 mg per bottle | Research-backed ingredients
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
