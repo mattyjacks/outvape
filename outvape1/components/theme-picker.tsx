@@ -26,7 +26,7 @@ export function ThemePicker() {
 
       const label = document.createElement("span");
       label.textContent = "THEME";
-      label.style.cssText = "font-size:0.6rem;font-weight:800;letter-spacing:0.18em;color:rgba(255,255,255,0.35);user-select:none;margin-right:14px;";
+      label.style.cssText = "font-size:0.6rem;font-weight:800;letter-spacing:0.18em;color:rgba(255,255,255,0.78);user-select:none;margin-right:14px;";
       el.appendChild(label);
 
       THEMES.forEach((t) => {
